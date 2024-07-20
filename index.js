@@ -165,16 +165,225 @@ let library = [
 ];
 
 library.push({
-    title: "Learning JavaScript Design Patterns", 
-    author: "Addy Osmani",
-    pages: 254
+  title: "Learning JavaScript Design Patterns",
+  author: "Addy Osmani",
+  pages: 254,
 });
-console.log(library)
+console.log(library);
 
 let lasttwo = library.slice(-2);
 let removefirst = library.shift();
 
 let output = 0;
 output += library[0].pages + library[1].pages + library[2].pages;
-console.log(library)
+console.log(library);
 console.log(output);
+
+//2.2.1 Complex Data types
+console.log("----------------------------------------------------------------");
+console.log("2.2.1 Complex Data types");
+
+let testObject = {
+  age: 17,
+  name: "name",
+  languages: ["English", "Hindi"],
+};
+console.log(testObject);
+console.log(testObject.name);
+
+//2.2.2 What can arrays be useful for in practice?
+console.log("----------------------------------------------------------------");
+console.log("2.2.1 Complex Data types");
+
+let user1 = {
+  name: "Calvin",
+  surname: "Hart",
+  age: 66,
+  email: "CalvinMHart@teleworm.us",
+};
+
+let user2 = {
+  name: "Mateus",
+  surname: "Pinto",
+  age: 21,
+  email: "MateusPinto@dayrep.com",
+};
+
+let users = [
+  {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us",
+  },
+  {
+    name: "Mateus",
+    surname: "Pinto",
+    age: 21,
+    email: "MateusPinto@dayrep.com",
+  },
+];
+
+console.log(users[0].name);
+console.log(users[1].name);
+
+//add Array
+users[2] = {
+  name: "Irene",
+  surname: "Purnell",
+  age: 32,
+  email: "IreneHPurnell@rhyta.com",
+};
+console.log(users);
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+console.log(typeof days); // -> object
+
+let day = "Sunday";
+
+console.log(days instanceof Array);
+console.log(day instanceof Array);
+
+//length
+
+let name1 = ["Olivia", "Emma", "Mateo", "Samuel"];
+name1[5] = "Amelia";
+console.log(name1);
+console.log(name1.length);
+
+//indexof
+
+console.log(name1.indexOf("Mateo"));
+console.log(name1.indexOf("Victor"));
+
+//Combine two arrays with concat
+
+let total = name1.concat(days);
+console.log(total);
+
+//2.2.3 Section Practice
+
+//Section 3
+console.log("----------------------------------------------------------------");
+
+//Assignment operators
+let year = 2050;
+let newYear = (year = 2051);
+//Same as
+year = 2050;
+year = 2051;
+newYear = year;
+
+//Unary operator
+let str = "123";
+let n12 = +str; // n12 is a number
+let n13 = -str; // n13 is a number
+console.log(typeof n12, n12);
+console.log(typeof n13, n13);
+
+// unary increment ++ and decrement -- operators
+
+let n14 = 10;
+let n15 = 10;
+
+console.log("n14", n14);
+console.log(n14++);
+console.log(n14);
+
+console.log("n15", n15);
+console.log(++n15);
+console.log(n15);
+
+let n16 = 20;
+let n17 = 20;
+
+console.log("n16", n16);
+console.log(n16++);
+console.log(n16);
+
+console.log("n17", n17);
+console.log(++n17);
+console.log(n17);
+
+console.log(2 * 3 + 1); // expected 7
+console.log(2 ** 4); // expected 16
+console.log(5 * 1); // expected 5
+console.log(8 ** 2 - 5 ** 2); // expected 39
+
+console.log(4 * 5 == 20);
+console.log(6 * 5 == "30");
+console.log(-17 < 0);
+console.log(25 > 1);
+console.log(2 + 2 * 2 > 4);
+
+console.log(true || false);
+console.log(false == false);
+console.log((false && false) || true);
+
+//Section3.2
+// console.log(true || false && false && true);alert("Hello, World!");
+// window.alert("Hello, World! for the second time");
+// alert(4 * 7);
+// alert(true);
+// alert("text 1", "text 2");
+
+// let decision = window.confirm("Is it OK?");
+// console.log(decision);
+
+// let width = window.prompt("Width: ")
+// // let length = window.prompt("Length: ");
+// // let height = window.prompt("Height: ");
+// // alert("area: " + width*length*height);
+
+//3.2 Lab Interaction
+
+let contacts = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+  },
+  {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com",
+  },
+  {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu",
+  },
+];
+
+// let decision = window.confirm("Do you wanna more contacts");
+// if (decision == true) {
+//   let newname = window.prompt("Enter his name.");
+//   let phone = window.prompt("Enter his phone.");
+//   let email = window.prompt("Enter his email.");
+//   contacts.push({ name: newname, phone: phone, email: email });
+// }
+
+// let last = contacts.length - 1;
+
+// console.log(
+//   `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+// );
+// console.log(
+//   `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
+// );
+let str1 = "12";
+str1 = +str1;
+console.log(str1);
+console.log(typeof str1);
+
+let n4 = 10;
+let m = ++n4;
+
+console.log(n4,m);
+console.log(20 || 5);
+
+console.log(false || "true");
+
+let test = prompt("Hello", "World");
+console.log(test);
+console.log("abcd" < "Abcd");
