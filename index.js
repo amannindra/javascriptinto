@@ -371,19 +371,173 @@ let contacts = [
 // console.log(
 //   `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
 // );
-let str1 = "12";
-str1 = +str1;
-console.log(str1);
-console.log(typeof str1);
+// let str1 = "12";
+// str1 = +str1;
+// console.log(str1);
+// console.log(typeof str1);
 
-let n4 = 10;
-let m = ++n4;
+// let n4 = 10;
+// let m = ++n4;
 
-console.log(n4,m);
-console.log(20 || 5);
+// console.log(n4,m);
+// console.log(20 || 5);
 
-console.log(false || "true");
+// console.log(false || "true");
 
-let test = prompt("Hello", "World");
-console.log(test);
-console.log("abcd" < "Abcd");
+// let test = prompt("Hello", "World");
+// console.log(test);
+// console.log("abcd" < "Abcd");
+
+//Section 4.02
+
+// if (condition){
+//   block of code
+// }
+
+// let isUserReady = confirm("Are you ready?");
+
+// console.log(isUserReady);
+// if (isUserReady){
+//   alert("user ready");
+// }
+// else {
+//   alert("user is not ready");
+// }
+
+let userAge = 23;
+let isFemale = false;
+let points = 703;
+let cartValue = 299;
+let shippingCost = 9.99;
+// if (userAge > 21) {
+//     if (cartValue >= 300 || points >= 500) {
+//      shippingCost = 0;
+//     }
+// }
+// console.log(shippingCost);
+
+//Same as
+
+if (userAge > 21 && (cartValue >= 300 || points >= 500)) {
+  shippingCost = 0;
+}
+
+//Section 4 practice
+
+// let number1 = window.prompt("Please enter a number!");
+
+// number1 > 90 && number1 < 110 ? alert("Bingo!") : alert("Miss");
+
+// let nums1 = window.prompt("Enter the first number");
+// let nums2 = window.prompt("Enter the second number");
+
+// if (Number.isNaN(nums1) || Number.isNaN(nums2)){
+//   console.log("its a number!");
+// }
+
+// let math = window.prompt("Mathematical Operations");
+
+// switch (math) {
+//   case "+":
+//     alert(parseInt(nums1) + parseInt(nums2));
+//     console.log("+");
+//     break;
+//   case "-":
+//     alert(parseInt(nums1) - parseInt(nums2));
+//     console.log("-");
+//     break;
+//   case "*":
+//     alert(parseInt(nums1) * parseInt(nums2));
+//     console.log("*");
+//     break;
+//   case "/":
+//     alert(parseInt(nums1) / parseInt(nums2));
+//     console.log("/");
+//     break;
+//   default:
+//     alert("Matematical Operation")
+//     break;
+// }
+
+//Section 4.0.9 Lab Condional execution
+
+// let contacts5 = [
+//   {
+//     name: "Maxwell Wright",
+//     phone: "(0191) 719 6495",
+//     email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+//   },
+//   {
+//     name: "Raja Villarreal",
+//     phone: "0866 398 2895",
+//     email: "posuere.vulputate@sed.com",
+//   },
+//   {
+//     name: "Helen Richards",
+//     phone: "0800 1111",
+//     email: "libero@convallis.edu",
+//   },
+// ];
+
+// let what = window.prompt(
+//   "Showing the first Contact(f), Showing the last contact(l), or Adding a new contact(a)"
+// );
+
+// switch (what) {
+//   case "f":
+//     alert(
+//       contacts5[0].name +
+//         " : " +
+//         contacts5[0].phone +
+//         " : " +
+//         contacts5[0].email
+//     );
+//     break;
+//   case "l":
+//     alert(
+//       contacts5[contacts5.length - 1].name +
+//         " : " +
+//         contacts5[contacts5.length - 1].phone +
+//         " : " +
+//         contacts5[contacts5.length - 1].email
+//     );
+//     break;
+//   case "a":
+//     let contactName = prompt("Enter: Name");
+//     let contactsPhone = prompt("Enter: Phone");
+//     let contactsEmail = prompt("Enter: Email");
+
+//     if (contactName && contactsPhone && contactsEmail) {
+//       contacts5.push({
+//         name: contactName,
+//         phone: contactsPhone,
+//         email: contactsEmail,
+//       });
+//     } else {
+//       alert("You didn't give the necessary details to add contact");
+//     }
+//     break;
+// }
+// console.log(contacts5);
+
+let n176 = 0;
+while (n176 < 91) {
+  console.log(n176); // -> 0, 10, 20, 30, 40, 50, 60, 70, 80, 90
+  n176 += 10;
+}
+
+// let isOver = false;
+// let counter = 0;
+// while (!isOver){
+//   let c = confirm(`[${counter} Continue the loop?]`);
+//   isOver = c === true ? false : true;
+//   counter += 1
+// }
+
+//Section 4.1.4 The do ... while loop
+
+let isOver = false;
+let counter = 0;
+do{
+  isOver = !confirm(`[${counter++} Continue the loop?]`)
+}while(!isOver)
