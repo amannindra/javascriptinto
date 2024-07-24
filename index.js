@@ -536,8 +536,169 @@ while (n176 < 91) {
 
 //Section 4.1.4 The do ... while loop
 
-let isOver = false;
-let counter = 0;
-do{
-  isOver = !confirm(`[${counter++} Continue the loop?]`)
-}while(!isOver)
+// let isOver = false;
+// let counter = 0;
+// do{
+//   isOver = !confirm(`[${counter++} Continue the loop?]`)
+// }while(!isOver)
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let i = 0; i < 4; i++) {
+  sum += values[i];
+}
+console.log(sum); // -> 190
+
+for (let number of values) {
+  console.log(number);
+}
+
+let cities = [
+  { name: "New York", population: 18.65e6 },
+  { name: "Cairo", population: 18.82e6 },
+  { name: "Mumbai", population: 19.32e6 },
+  { name: "São Paulo", population: 20.88e6 },
+  { name: "Mexico City", population: 21.34e6 },
+  { name: "Shanghai", population: 23.48e6 },
+  { name: "Delhi", population: 25.87e6 },
+  { name: "Tokyo", population: 37.26e6 },
+];
+
+for (let city of cities) {
+  if (city.population > 20e6) {
+    console.log(city.name, city.population);
+  }
+}
+
+let username = {
+  name: "Calvin",
+  surname: "Hart",
+  age: 66,
+  email: "CalvinMHart@teleworm.us",
+};
+
+for (let key in username) {
+  console.log(key);
+}
+
+//THis is a good case. You need Breaks
+// let gate = prompt("Choose gate: a, b, or c");
+// let win = false;
+// switch (gate) {
+//   case "a":
+//     alert("Gate A: empty");
+//   case "b":
+//     alert("Gate B: main prize");
+//     win = true;
+//   case "c":
+//     alert("Gate C: empty");
+//   default:
+//     alert("No gate " + String(gate));
+// }
+// if (win) {
+//   alert("Winner!");
+// }
+
+//4.1 Section Practice
+
+// for (let i = 100; i => 0; i -= 10){
+//   console.log(i)
+// }
+// let big = Number(prompt("Large"));
+
+// let small = Number(prompt("Small"));
+
+// for (let i = big; i > small; i -= 10) {
+//   console.log(i);
+// }
+
+// let numbers = [21, 45, 100, 12, 11, 78, 61, 4, 39, 22];
+
+// for (let number in numbers) {
+//   if (number % 2 == 0) {
+//     console.log(number);
+//   }
+// }
+
+// let movies = [];
+// let going = true;
+// do {
+//   const movie = prompt("Movie");
+//   const ratings = prompt("Ratings");
+//   if (movie == "cancel" || ratings == "cancel") {
+//     going = false;
+//   }
+//   else{
+//     movies.push({"movie": movie, "ratings": ratings});
+//   }
+// } while (going);
+
+// for (let move of movies) {
+//   if (move.ratings > 7) {
+//     console.log(`${move.movie} : ${move.ratings}`);
+//   }
+// }
+
+let contacts2 = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+  },
+  {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com",
+  },
+  {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu",
+  },
+];
+let asd = true;
+while (asd) {
+  let decision = window.prompt(
+    "first contact, last contact, all contact, add contact, quit program"
+  );
+
+  switch (decision) {
+    case "f":
+      alert(
+        `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+      );
+      console.log(
+        `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+      );
+      break;
+    case "l":
+      let last = contacts.length - 1;
+      alert(
+        `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
+      );
+      console.log(
+        `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
+      );
+      break;
+    case "a":
+      for (let contact of contacts2) {
+        console.log(`${contact.name} : ${contact.phone} / ${contact.email}`);
+        alert(`${contact.name} : ${contact.phone} / ${contact.email}`);
+      }
+
+      break;
+    case "add":
+      let newname = window.prompt("Enter his name.");
+      let phone = window.prompt("Enter his phone.");
+      let email = window.prompt("Enter his email.");
+      contacts2.push({ name: newname, phone: phone, email: email });
+      break;
+    case "quit":
+      asd = false;
+      break;
+  }
+}
