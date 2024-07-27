@@ -660,45 +660,61 @@ let contacts2 = [
     email: "libero@convallis.edu",
   },
 ];
-let asd = true;
-while (asd) {
-  let decision = window.prompt(
-    "first contact, last contact, all contact, add contact, quit program"
-  );
+// let asd = true;
+// while (asd) {
+//   let decision = window.prompt(
+//     "first contact, last contact, all contact, add contact, quit program"
+//   );
 
-  switch (decision) {
-    case "f":
-      alert(
-        `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
-      );
-      console.log(
-        `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
-      );
-      break;
-    case "l":
-      let last = contacts.length - 1;
-      alert(
-        `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
-      );
-      console.log(
-        `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
-      );
-      break;
-    case "a":
-      for (let contact of contacts2) {
-        console.log(`${contact.name} : ${contact.phone} / ${contact.email}`);
-        alert(`${contact.name} : ${contact.phone} / ${contact.email}`);
-      }
+//   switch (decision) {
+//     case "f":
+//       alert(
+//         `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+//       );
+//       console.log(
+//         `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+//       );
+//       break;
+//     case "l":
+//       let last = contacts.length - 1;
+//       alert(
+//         `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
+//       );
+//       console.log(
+//         `${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`
+//       );
+//       break;
+//     case "a":
+//       for (let contact of contacts2) {
+//         console.log(`${contact.name} : ${contact.phone} / ${contact.email}`);
+//         alert(`${contact.name} : ${contact.phone} / ${contact.email}`);
+//       }
 
-      break;
-    case "add":
-      let newname = window.prompt("Enter his name.");
-      let phone = window.prompt("Enter his phone.");
-      let email = window.prompt("Enter his email.");
-      contacts2.push({ name: newname, phone: phone, email: email });
-      break;
-    case "quit":
-      asd = false;
-      break;
+//       break;
+//     case "add":
+//       let newname = window.prompt("Enter his name.");
+//       let phone = window.prompt("Enter his phone.");
+//       let email = window.prompt("Enter his email.");
+//       contacts2.push({ name: newname, phone: phone, email: email });
+//       break;
+//     case "quit":
+//       asd = false;
+//       break;
+//   }
+// }
+
+//Section 5
+let temperature;
+function getTempMean() {
+  let sum = 0;
+  for (let i = 0; i < temperature.length; i++) {
+    sum += temperature[i];
   }
+  return (sum / temperature.length).toFixed(2);
 }
+
+temperature = [
+  12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+  20, 19, 17, 16,
+];
+console.log(getTempMean());
