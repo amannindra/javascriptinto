@@ -910,4 +910,78 @@ let sb = 1;
 //   clearInterval(adfg);
 // },20000)
 
-let fibbRec = (num1, numb) => {};
+let fibbRec = (num) => {
+  if (num == 0) {
+    return 0;
+  } else if (num == 1) {
+    return 1;
+  } else {
+    return fibbRec(num - 1) + fibbRec(num - 2);
+  }
+};
+
+console.log("Fibonacci Series:");
+console.log(fibbRec(9));
+
+let fibbRecs = (n) => (n == 0 ? 0 : fibbRec(n - 1) + fibbRec(n - 2));
+
+console.log(fibbRecs(9));
+
+// 5.1.12 Lab functions
+
+let bontacts = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+  },
+  {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com",
+  },
+  {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu",
+  },
+];
+let showContact = function (contacts, i) {
+  if (contacts instanceof Array && contacts[i]) {
+    console.log(
+      `${contacts[i].name} / ${contacts[i].phone} / ${contacts[i].email}`
+    );
+  }
+};
+
+let showAllContacts = function (contacts) {
+  if (contacts instanceof Array) {
+    for (contact of contacts) {
+      console.log(`${contact.name} / ${contact.phone} / ${contact.email}`);
+    }
+  }
+};
+
+let addNewContact = function (contacts, name, phone, email) {
+  if (contacts instanceof Array && name && phone && email) {
+    contacts.push({
+      name: name,
+      phone: phone,
+      email: email,
+    });
+  }
+};
+
+let sorts = window.confirm("Do you wanna sort");
+
+if (sorts) {
+  let kind = window.prompt("What kind of sort do you want?(n)(p)(e)");
+  switch (kind) {
+    case "n":
+      break;
+    case "p":
+      break;
+    case "e":
+      break;
+  }
+}
