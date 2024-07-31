@@ -718,3 +718,196 @@ temperature = [
   20, 19, 17, 16,
 ];
 console.log(getTempMean());
+
+function factorial(a, n) {
+  n += a;
+  if (a > 0) {
+    // console.log("n: " + n);
+    // console.log("a: " + a);
+    return factorial(a - 1, n);
+  } else {
+    // console.log("final n: " + n);
+    return n;
+  }
+}
+let totals5 = 0;
+console.log("n: " + factorial(11, totals5));
+
+let newfactorial = factorial;
+let newfact = factorial();
+console.log(typeof newfactorial);
+console.log(typeof newfact);
+
+console.log(newfactorial(19, 0));
+
+function add(a, b) {
+  return a + b;
+}
+function sub(a, b) {
+  return a - b;
+}
+function op(functions, a, b) {
+  return functions(a, b);
+}
+
+console.log(op(add, 10, 20));
+console.log(op(sub, 10, 20));
+
+let myMulti = function multi(a, b) {
+  return a * b;
+};
+
+console.log(myMulti(154, 545));
+
+console.log(op(myMulti, 10, 20));
+console.log(
+  op(
+    function (a, b) {
+      return a / b;
+    },
+    10,
+    20
+  )
+);
+
+let inner = function () {
+  console.log("inner 1");
+};
+
+let outer = function (callback) {
+  console.log("outer 1");
+  callback();
+  console.log("outer 2");
+};
+
+console.log("test 1");
+outer(inner);
+console.log("test 2");
+
+// The code above is same as this
+
+let outers = function () {
+  console.log("outer 1");
+  inner();
+  console.log("outer 2");
+};
+
+outers();
+// Adding Timer
+
+console.log("----------------------------------------------------------------");
+let inners1 = function () {
+  console.log("inner 12");
+};
+
+let outers1 = function (callback) {
+  console.log("outer 12");
+  setInterval(callback(), 10000);
+  console.log("outer 22");
+};
+
+console.log("test 12");
+outers1(inners1);
+console.log("test 22");
+
+console.log("----------------------------------------------------------------");
+
+// let ina = function () {
+//   console.log("inner 1");
+// };
+
+// let outa = function (callback) {
+// //   console.log("outer 1");
+// //   let timerId = setInterval(callback, 1000);
+// //   setTimeout(function () {
+// //     clearInterval(timerId);
+// //   }, 5500);
+// // };
+
+// console.log("test 1");
+// outa(ina);
+// console.log("test 2");
+
+let con = 0;
+window.addEventListener("click", function () {
+  console.log("clfsdfds" + con);
+  con += 1;
+});
+
+let addd = (a, b) => {
+  return a + b;
+};
+
+console.log("addd: " + add(4324, 34324));
+
+let m = (a, b) => {
+  return a * b;
+};
+console.log("m: " + m(4324, 4324));
+
+function factorials(n) {
+  return n > 1 ? n * factorials(n - 1) : 1;
+}
+
+console.log(factorials(23));
+
+let Applications = ["Alice", "Eve", "John"];
+function showbn(element) {
+  console.log(element);
+}
+Applications.forEach(showbn);
+
+//Section 5 Excerise
+
+//5.1.10 Section Practice
+
+let nsb = [50, 10, 40, 30, 20];
+let nsbs = nsb.sort();
+console.log("nsbs: " + nsbs);
+
+let compare = (a, b) => {
+  return a < b ? -1 : 1;
+};
+
+let sorted = nsb.sort(compare);
+
+console.log(sorted);
+
+//Excerise 2
+
+let adds = (a, b) => {
+  return a + b;
+};
+
+let subs = (a, b) => {
+  return a - b;
+};
+let multi = (a, b) => {
+  return a * b;
+};
+let div = (a, b) => {
+  return a / b;
+};
+
+let operations = (func, a, b) => {
+  return Number.isInteger(a) && Number.isInteger(b) ? func(a, b) : NaN;
+};
+console.log("addition: ", operations(adds, 10, 5));
+console.log("subtraction: ", operations(subs, 10, 5));
+console.log("multiplication: ", operations(multi, 10, 5));
+console.log("division: ", operations(div, 10, 5));
+
+console.log("not correct: ", operations(div, "10", 5));
+
+let sb = 1;
+
+// let adfg = setInterval(function() {
+//   console.log(sb);
+//   sb += 1;
+// }, 2000)
+
+// setTimeout(function() {
+//   clearInterval(adfg);
+// },20000)
+
+let fibbRec = (num1, numb) => {};
